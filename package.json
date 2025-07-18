@@ -1,0 +1,56 @@
+{
+  "name": "dc_nodejs",
+  "version": "1.0.0",
+  "description": "Divine Campus Node.js API backend with TypeScript and Prisma ORM",
+  "main": "dist/server.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "dev": "concurrently \"tsc --watch\" \"nodemon dist/server.js\"",
+    "dev:ts": "ts-node src/server.ts",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:studio": "prisma studio",
+    "prisma:deploy": "prisma migrate deploy",
+    "clean": "rm -rf dist",
+    "prebuild": "npm run clean",
+    "prestart": "npm run build"
+  },
+  "keywords": [
+    "nodejs",
+    "typescript",
+    "express",
+    "prisma",
+    "mysql",
+    "api",
+    "backend",
+    "divine-campus"
+  ],
+  "author": "Divine Campus Team",
+  "license": "ISC",
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.12.0",
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.0",
+    "express": "^4.21.2",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "prisma": "^6.12.0"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^24.0.14",
+    "concurrently": "^9.2.0",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}
